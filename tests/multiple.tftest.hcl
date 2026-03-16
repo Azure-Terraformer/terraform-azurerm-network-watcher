@@ -1,0 +1,26 @@
+provider "azurerm" {
+  features {}
+  subscription_id = "b2dcbc85-4327-454d-8972-b8ab7fcf5e76"
+}
+
+variables {
+  name_prefix = "aztf-test"
+  location    = "westus3"
+}
+
+run "baseline" {
+  module {
+    source = "./examples/multiple"
+  }
+
+  variables {
+    locations = {
+      "westeurope" = "westeurope"
+    }
+
+  }
+
+  providers = {
+    azurerm = azurerm
+  }
+}
