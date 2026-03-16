@@ -1,6 +1,6 @@
 # Overview
 
-Setup Network Watcher
+Setup Network Watcher the right way.
 
 ## Test Status
 
