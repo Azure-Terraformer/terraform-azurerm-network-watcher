@@ -15,7 +15,7 @@ run "baseline" {
 
   variables {
     locations = {
-      "westeurope" = "westeurope"
+      "swedencentral" = "swedencentral"
     }
 
   }
