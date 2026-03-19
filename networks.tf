@@ -13,7 +13,7 @@ resource "azurerm_network_watcher_flow_log" "networks" {
   for_each = var.networks
 
   network_watcher_name = azurerm_network_watcher.main.name
-  resource_group_name  = azurerm_resource_group.main.name
+  resource_group_name  = var.resource_group_name
   name                 = "log-${random_string.networks[each.key].result}"
 
   target_resource_id = each.key
