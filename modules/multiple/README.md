@@ -11,7 +11,7 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_watcher"></a> [watcher](#module\_watcher) | ../../ | n/a |
+| <a name="module_watcher"></a> [watcher](#module\_watcher) | ../.. | n/a |
 
 ## Resources
 
