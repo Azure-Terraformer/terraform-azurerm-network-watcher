@@ -4,7 +4,7 @@ module "watcher" {
   for_each = var.locations
 
   # Adjust path if your base module lives elsewhere
-  source = "../../"
+  source = "../.."
 
   resource_group_name = var.resource_group_name
   name                = var.name
