@@ -33,5 +33,5 @@ variable "retention_policy" {
 }
 variable "networks" {
   type    = set(string)
-  default = {}
+  default = []
 }
