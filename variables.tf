@@ -39,7 +39,3 @@ variable "subnets" {
   type    = set(string)
   default = []
 }
-variable "nsgs" {
-  type    = set(string)
-  default = []
-}

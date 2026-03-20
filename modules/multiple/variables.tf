@@ -13,3 +13,11 @@ variable "tags" {
   type    = map(string)
   default = {}
 }
+variable "networks" {
+  type    = map(set(string))
+  default = {}
+}
+variable "subnets" {
+  type    = map(set(string))
+  default = {}
+}

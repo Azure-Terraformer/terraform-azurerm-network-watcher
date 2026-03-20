@@ -1,6 +1,50 @@
 # Overview
 
-Setup Network Watcher the right way.
+This module provisions Azure Network Watcher and a corresponding Storage Account per region following best practices.
+
+It outputs a region-indexed map that makes it easy to configure Network Flow Logs by pairing each Network Watcher with its corresponding Storage Account.
+
+## Output
+
+The module exposes a locations output with the following structure:
+
+```
+locations = {
+  "swedencentral" = {
+    "resource_group" = "rg-tftest-nmy0cg"
+    "storage" = "stnfl8xyhal5g"
+    "watcher" = "nw-tftest-swedencentral"
+  }
+  "westeurope" = {
+    "resource_group" = "rg-tftest-nmy0cg"
+    "storage" = "stnflimx24p2d"
+    "watcher" = "nw-tftest-westeurope"
+  }
+}
+```
+
+## How to Use
+
+Each key represents an Azure region. The value provides all required resources to enable flow logging:
+
+- watcher → Network Watcher name for the region
+- storage → Storage Account used for flow log retention
+- resource_group → Resource group containing both resources
+
+```
+for_each = module.watcher.locations
+
+# Example usage
+network_watcher_name = each.value.watcher
+storage_account_id   = each.value.storage
+```
+
+This structure allows you to easily iterate and configure flow logs:
+
+1. Ensures correct regional pairing (required by Azure)
+2. Simplifies multi-region deployments
+3. Enables straightforward automation of flow logs
+4. Avoids manual lookups or mismatched resources
 
 ## Test Status
 
