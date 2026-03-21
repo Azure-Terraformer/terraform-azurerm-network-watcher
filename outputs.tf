@@ -14,8 +14,14 @@ output "storage" {
 }
 output "location" {
   value = {
-    watcher        = azurerm_network_watcher.main.name
-    storage        = azurerm_storage_account.main.name
+    network_watcher = {
+      id   = azurerm_network_watcher.main.id
+      name = azurerm_network_watcher.main.name
+    }
+    storage = {
+      id   = azurerm_storage_account.main.id
+      name = azurerm_storage_account.main.name
+    }
     resource_group = azurerm_network_watcher.main.resource_group_name
   }
 }
