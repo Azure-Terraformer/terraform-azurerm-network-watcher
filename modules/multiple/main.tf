@@ -10,4 +10,7 @@ module "watcher" {
   name                = var.name
   location            = each.key
   tags                = var.tags
+
+  networks = lookup(var.networks, each.key, toset([]))
+  subnets  = lookup(var.subnets, each.key, toset([]))
 }

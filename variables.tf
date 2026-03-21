@@ -27,3 +27,15 @@ variable "storage_replication_type" {
   type    = string
   default = "LRS"
 }
+variable "retention_policy" {
+  type    = number
+  default = 7
+}
+variable "networks" {
+  type    = set(string)
+  default = []
+}
+variable "subnets" {
+  type    = set(string)
+  default = []
+}

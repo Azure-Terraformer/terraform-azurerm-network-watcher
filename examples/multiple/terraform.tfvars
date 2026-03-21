@@ -1,6 +1,6 @@
-location    = "eastus2"
+location    = "westeurope"
 name_prefix = "tftest"
 locations = {
-  "eastus2" = "eastus2"
-  "westus3" = "westus3"
+  "westeurope"    = "westeurope"
+  "swedencentral" = "swedencentral"
 }
