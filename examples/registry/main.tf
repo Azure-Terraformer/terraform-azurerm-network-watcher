@@ -8,7 +8,7 @@ module "setup" {
 module "watcher" {
 
   source  = "Azure-Terraformer/network-watcher/azurerm"
-  version = "1.0.8"
+  version = "1.0.9"
 
   resource_group_name = module.setup.resource_group_name
   location            = module.setup.location
