@@ -12,6 +12,10 @@ on:
     paths:
       - 'modules/**'
 
+concurrency:
+  group: tftest-multiple
+  cancel-in-progress: false
+
 jobs:
   terraform-tests:
     runs-on: ubuntu-latest
